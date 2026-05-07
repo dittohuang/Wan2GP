@@ -3219,7 +3219,8 @@ def setup_loras(model_type, transformer,  lora_dir, lora_preselected_preset, spl
     lora_dir = get_lora_dir(base_model_type)
     if lora_dir != None :
         if not (os.path.isdir(lora_dir) or os.path.islink(lora_dir)):
-            raise Exception("--lora-dir should be a path to a directory that contains Loras")
+            print(f"Warning: Lora directory '{lora_dir}' does not exist or is not a directory.")
+            # raise Exception("--lora-dir should be a path to a directory that contains Loras")
 
 
     if lora_dir != None:
