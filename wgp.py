@@ -2026,7 +2026,11 @@ def get_lora_dir(model_type):
     if os.path.isfile(lora_dir):
         raise Exception(f"loras path '{lora_dir}' exists and is not a directory")
     if not (os.path.isdir(lora_dir) or os.path.islink(lora_dir)):
-        os.makedirs(lora_dir, exist_ok=True)
+        print(f"Creating lora directory at '{lora_dir}'...")
+        try:
+            os.makedirs(lora_dir, exist_ok=True)
+        except Exception as e:
+            pass
     return lora_dir
 
 attention_modes_installed = get_attention_modes()
