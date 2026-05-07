@@ -204,6 +204,8 @@ if __name__ == '__main__':
     # power = power.clamp(-1, 1)
     # angle = angle.clamp(-1, 1)
 
+    import matplotlib
+    matplotlib.use('Agg')
     import matplotlib.pyplot as plt
 
     # Visualize power

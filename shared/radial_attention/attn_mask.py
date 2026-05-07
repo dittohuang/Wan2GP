@@ -1,5 +1,7 @@
 import torch
 # import flashinfer
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 # from sparse_sageattn import sparse_sageattn
 from einops import rearrange, repeat

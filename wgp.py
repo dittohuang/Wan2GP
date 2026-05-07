@@ -2025,7 +2025,7 @@ def get_lora_dir(model_type):
         raise Exception("loras unknown")
     if os.path.isfile(lora_dir):
         raise Exception(f"loras path '{lora_dir}' exists and is not a directory")
-    if not os.path.isdir(lora_dir):
+    if not (os.path.isdir(lora_dir) or os.path.islink(lora_dir)):
         os.makedirs(lora_dir, exist_ok=True)
     return lora_dir
 
