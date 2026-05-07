@@ -3218,7 +3218,7 @@ def setup_loras(model_type, transformer,  lora_dir, lora_preselected_preset, spl
     base_model_type = get_base_model_type(model_type)
     lora_dir = get_lora_dir(base_model_type)
     if lora_dir != None :
-        if not os.path.isdir(lora_dir) or not os.path.islink(lora_dir):
+        if not os.path.isdir(lora_dir) and not os.path.islink(lora_dir):
             raise Exception("--lora-dir should be a path to a directory that contains Loras")
 
 
